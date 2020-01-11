@@ -12,6 +12,12 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+/**
+ * 
+ * @author -- Sandeep kumar vishwakarma
+ *
+ */
+
 @Entity
 @Table(name = "TEACHER")
 @Data
