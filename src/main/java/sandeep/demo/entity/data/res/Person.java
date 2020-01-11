@@ -20,15 +20,16 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class Person {
 
-  @Id
-  @GeneratedValue(strategy = GenerationType.IDENTITY)
-  private long id;
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Integer id;
+	
 	@Column(name = "FIRST_NAME")
 	private String firstName;
-	
+
 	@Column(name = "LAST_NAME")
 	private String lastName;
-  
+
 	@Column(name = "DOB")
 	private Date dob;
 
