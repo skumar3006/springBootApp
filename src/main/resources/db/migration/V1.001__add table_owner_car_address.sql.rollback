@@ -1,0 +1,9 @@
+-- Sandeep kumar vishwakarma
+--------------------------------------------
+DO $$ BEGIN 
+	
+drop table address;
+drop table car;
+drop table owner;
+
+END $$;
