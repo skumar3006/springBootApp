@@ -1,0 +1,14 @@
+**/.classpath
+**/.project
+**/.settings
+**/bin
+**/target
+**/*.iml
+**/.idea/
+/.metadata
+/Servers
+test-output
+**/resources/temp
+*.sts4-cache
+*.vscode/**
+**/.DS_Store
