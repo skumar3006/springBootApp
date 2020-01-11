@@ -20,7 +20,7 @@ import lombok.NoArgsConstructor;
  */
 
 @Entity
-@Table(name="COURSE")
+@Table(name = "COURSE")
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
@@ -30,18 +30,18 @@ public class Course {
 	@GeneratedValue
 	@Column(name = "ID")
 	private int id;
-	
+
 	@Column(name = "NAME")
-    private String name;
-	
+	private String name;
+
 	@Column(name = "WORK_LOAD")
-    private int workload;
-	
+	private int workload;
+
 	@Column(name = "RATE")
-    private short rate;
-    
+	private short rate;
+
 	@ManyToOne
-    @JoinColumn(foreignKey = @ForeignKey(name = "fk_course_teacher"))
-    private Teacher teacher;
-	
+	@JoinColumn(foreignKey = @ForeignKey(name = "fk_course_teacher"))
+	private Teacher teacher;
+
 }

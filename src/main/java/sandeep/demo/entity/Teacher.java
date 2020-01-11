@@ -24,21 +24,21 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class Teacher implements Serializable {
-	
+
 	private static final long serialVersionUID = 1L;
-	
+
 	@Id
 	@GeneratedValue
 	@Column(name = "ID")
 	private int id;
-	
+
 	@Column(name = "NAME")
 	private String name;
-	
+
 	@Column(name = "PICTURE_URL")
 	private String pictureURL;
-	
+
 	@Column(name = "EMAIL")
 	private String email;
-	
+
 }
