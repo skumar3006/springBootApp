@@ -1,32 +1,36 @@
 package sandeep.demo.manager;
 
 import java.util.List;
+import java.util.Optional;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import sandeep.demo.entity.Owner;
+import sandeep.demo.repository.OwnerRepository;
 
 @Component
 public class OwnerManager {
 
+	@Autowired
+	OwnerRepository ownerRepository;
+
 	public Owner createOwner(Owner owner) {
-		// TODO Auto-generated method stub
-		return null;
+		ownerRepository.save(owner);
+		return owner;
 	}
 
 	public List<Owner> getAllRecords() {
-		// TODO Auto-generated method stub
-		return null;
+		return (List<Owner>) ownerRepository.findAll();
 	}
 
 	public Owner updateOwner(Owner owner) {
-		// TODO Auto-generated method stub
-		return null;
+		ownerRepository.save(owner);
+		return owner;
 	}
 
-	public Owner getById(String ownerId) {
-		// TODO Auto-generated method stub
-		return null;
+	public Optional<Owner> getById(Integer ownerId) {
+		return ownerRepository.findById(ownerId);
 	}
 
 }

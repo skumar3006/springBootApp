@@ -1,6 +1,7 @@
 package sandeep.demo.controller;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpHeaders;
@@ -10,6 +11,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -30,15 +32,14 @@ public class OwnerController {
 		return new ResponseEntity<List<Owner>>(list, new HttpHeaders(), HttpStatus.OK);
 	}
 
-	@GetMapping(value = "{/ownerId}")
-	public ResponseEntity<Owner> getById(@PathVariable String ownerId) {
-		Owner owner = ownerManager.getById(ownerId);
-
-		return new ResponseEntity<Owner>(owner, new HttpHeaders(), HttpStatus.OK);
+	@GetMapping(value = "/{ownerId}")
+	public Optional<Owner> getById(@PathVariable Integer ownerId) {
+		Optional<Owner> owner = ownerManager.getById(ownerId);
+		return owner;
 	}
 
 	@PostMapping
-	public ResponseEntity<Owner> createOrUpdateEmployee(Owner owner) {
+	public ResponseEntity<Owner> createOrUpdateEmployee(@RequestBody Owner owner) {
 		Owner response = ownerManager.createOwner(owner);
 		return new ResponseEntity<Owner>(response, new HttpHeaders(), HttpStatus.OK);
 	}

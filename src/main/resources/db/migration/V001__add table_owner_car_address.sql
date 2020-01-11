@@ -17,7 +17,7 @@ CREATE TABLE address (
   street character varying(255) NOT NULL, 
   zip character varying(10) NOT NULL, 
   state character varying(255) NOT NULL, 
-  county character varying(255) NOT NULL, 
+  country character varying(255) NOT NULL, 
   owner_id integer NOT NULL, 
   CONSTRAINT pk_address_id PRIMARY KEY (id), 
   CONSTRAINT fk_address_owner_id FOREIGN KEY (owner_id) REFERENCES owner(id)
