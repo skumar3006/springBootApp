@@ -5,6 +5,7 @@ import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -44,7 +45,7 @@ public class Owner implements Serializable {
 	@Column(name = "DOB")
 	private Date dob;
 	
-	@OneToOne(mappedBy = "owner")
+	@OneToOne(mappedBy = "owner", fetch= FetchType.LAZY)
 	private Address address;
 	
 }

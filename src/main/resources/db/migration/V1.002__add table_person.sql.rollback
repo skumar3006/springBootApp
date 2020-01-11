@@ -1,0 +1,8 @@
+-- Sandeep kumar vishwakarma
+--------------------------------------------
+DO $$ BEGIN 
+
+drop table person;
+
+
+END $$;

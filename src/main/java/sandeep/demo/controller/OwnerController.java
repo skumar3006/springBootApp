@@ -17,7 +17,7 @@ import sandeep.demo.entity.Owner;
 import sandeep.demo.manager.OwnerManager;
 
 @RestController
-@RequestMapping("/employees")
+@RequestMapping("/owners")
 public class OwnerController {
 
 	@Autowired
