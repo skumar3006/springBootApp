@@ -40,10 +40,10 @@ public class AuthorizationServerConfiguration extends AuthorizationServerConfigu
 	@Override
 	public void configure(ClientDetailsServiceConfigurer clients) throws Exception {
 
-		clients.inMemory().withClient("sandeep")
+		clients.inMemory().withClient("sandeep.kumar@pepcus.com")
 				.authorizedGrantTypes("password", "authorization_code", "refresh_token", "implicit")
-				.authorities("ROLE_CLIENT", "ROLE_TRUSTED_CLIENT").scopes("read", "write", "trust").secret("{noop}secret")
-				.accessTokenValiditySeconds(120).// Access token is only valid for 2 minutes.
+				.authorities("ROLE_CLIENT", "ROLE_TRUSTED_CLIENT").scopes("read", "write", "trust").secret("{noop}sandeep.kumar")
+				.accessTokenValiditySeconds(3600).// Access token is only valid for 60 minutes.
 				refreshTokenValiditySeconds(600);// Refresh token is only valid for 10 minutes.
 	}
 
