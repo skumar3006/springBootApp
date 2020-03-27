@@ -53,5 +53,10 @@ public class OwnerController {
 		return HttpStatus.ACCEPTED;
 	}
 
+	@GetMapping(value = "/name/{firstName}")
+	public List<OwnerBO> byExample(@PathVariable String firstName) {
+		List<OwnerBO> owners = ownerManager.getByExample(firstName);
+		return owners;
+	}
 
 }
